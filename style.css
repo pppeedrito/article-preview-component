@@ -82,7 +82,7 @@ p.article-info {
   font-size: 0.8rem;
   letter-spacing: 0.5px;
   line-height: 1.6;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 1rem;
 }
 
 div.author-share-container,
@@ -96,11 +96,12 @@ div.article-author-details {
 div.author-share-container {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  padding: 2rem 1.5rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 div.author-share-container.share-article {
   background-color: var(--very-dark-grayish-blue);
+  transition: all 0.2s;
 }
 
 div.author-share-container.share-article div.article-author-details {
@@ -131,6 +132,7 @@ div.social-media {
 
 div.author-share-container.share-article div.social-media {
   display: flex;
+  transition: all 0.2s;
 }
 
 div.social-media p.share {
@@ -140,8 +142,12 @@ div.social-media p.share {
 }
 
 div.social-media p.share,
-div.social-media svg {
+div.social-media a.social-media-link {
   margin-right: 1rem;
+}
+
+div.social-media svg {
+  transition: all 0.2s;
 }
 
 div.social-media svg:last-child {
@@ -158,6 +164,7 @@ div.btn-share-container {
   width: 35px;
   border-radius: 50%;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 div.author-share-container.share-article div.btn-share-container {
@@ -211,6 +218,10 @@ div.author-share-container.share-article
     font-size: 1.3rem;
   }
 
+  div.article-text p.article-info {
+    padding-bottom: 0;
+  }
+
   div.author-share-container.share-article {
     background-color: transparent;
     position: relative;
@@ -224,7 +235,7 @@ div.author-share-container.share-article
     background-color: var(--very-dark-grayish-blue);
     display: flex;
     position: absolute;
-    right: -19%;
+    right: -20%;
     bottom: 100%;
     padding: 1rem 2rem;
     border-radius: 10px;
@@ -254,5 +265,23 @@ div.author-share-container.share-article
     svg.btn-share
     path#share-icon {
     fill: var(--white);
+  }
+
+  div.author-share-container svg.fb,
+  div.author-share-container svg.tw,
+  div.author-share-container svg.pinterest {
+    transform: all 0.2s;
+  }
+
+  div.author-share-container svg.fb:hover path {
+    fill: hsl(220, 46%, 48%);
+  }
+
+  div.author-share-container svg.tw:hover path {
+    fill: hsl(203, 89%, 53%);
+  }
+
+  div.author-share-container svg.pinterest:hover path {
+    fill: hsl(351, 100%, 45%);
   }
 }
