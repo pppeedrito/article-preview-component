@@ -40,7 +40,7 @@ img {
 
 /* *****wrapper***** */
 div.article-wrapper {
-  max-width: 800px;
+  max-width: 322px;
   background-color: var(--white);
   display: flex;
   flex-flow: column nowrap;
@@ -144,6 +144,10 @@ div.social-media svg {
   margin-right: 1rem;
 }
 
+div.social-media svg:last-child {
+  margin-right: 0;
+}
+
 div.btn-share-container {
   background-color: var(--light-grayish-blue);
   display: flex;
@@ -165,4 +169,90 @@ div.author-share-container.share-article
   svg.btn-share
   path#share-icon {
   fill: var(--white);
+}
+
+/* *****media queries***** */
+@media only screen and (min-width: 740px) {
+  div.article-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    max-width: 700px;
+  }
+
+  div.article-img-container,
+  div.article-img-container img.article-img {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  div.article-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    grid-area: 1 / 1 / auto / span 2;
+    height: 100%;
+  }
+
+  div.article-img-container img.article-img {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  div.article-text {
+    grid-area: 1 / 3 / auto / span 3;
+  }
+
+  div.article-text h3.article-title {
+    font-size: 1.3rem;
+  }
+
+  div.author-share-container.share-article {
+    background-color: transparent;
+    position: relative;
+  }
+
+  div.author-share-container.share-article div.article-author-details {
+    display: flex;
+  }
+
+  div.author-share-container.share-article div.social-media {
+    background-color: var(--very-dark-grayish-blue);
+    display: flex;
+    position: absolute;
+    right: -19%;
+    bottom: 100%;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px hsla(0, 0%, 0%, 0.3);
+  }
+
+  div.author-share-container.share-article div.social-media::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 99%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0.75rem solid transparent;
+    border-bottom: none;
+    border-top-color: var(--very-dark-grayish-blue);
+    filter: drop-shadow(0 4px 15px hsla(0, 0%, 0%, 0.3));
+  }
+
+  div.author-share-container.share-article div.btn-share-container {
+    background-color: va(--desaturated-dark-blue);
+  }
+
+  div.author-share-container.share-article
+    div.btn-share-container
+    svg.btn-share
+    path#share-icon {
+    fill: var(--white);
+  }
 }
